@@ -1,0 +1,97 @@
+2018-05-15 13:39:58,491 INFO: Microblog startup [in /home/suhrda01/microblog/app/__init__.py:47]
+2018-05-15 13:41:13,664 ERROR: Exception on /user/suhrda01 [GET] [in /home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/suhrda01/microblog/app/routes.py", line 79, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suhrda01/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/suhrda01/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/suhrda01/microblog/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/suhrda01/microblog/app/templates/user.html", line 11, in block "app_content"
+    <p>Last seen on: {{ moment(user.lsast_seen).format('LLL') }}</p>
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 83, in format
+    return self._render("format('%s')" % fmt, refresh)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 76, in _render
+    t = self._timestamp_as_iso_8601(self.timestamp)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 73, in _timestamp_as_iso_8601
+    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
+UndefinedError: 'app.models.User object' has no attribute 'lsast_seen'
+2018-05-15 13:41:41,935 ERROR: Exception on /user/susan [GET] [in /home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/suhrda01/microblog/app/routes.py", line 79, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/suhrda01/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/suhrda01/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/suhrda01/microblog/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/suhrda01/microblog/app/templates/user.html", line 11, in block "app_content"
+    <p>Last seen on: {{ moment(user.lsast_seen).format('LLL') }}</p>
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 83, in format
+    return self._render("format('%s')" % fmt, refresh)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 76, in _render
+    t = self._timestamp_as_iso_8601(self.timestamp)
+  File "/home/suhrda01/microblog/venv/local/lib/python2.7/site-packages/flask_moment.py", line 73, in _timestamp_as_iso_8601
+    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
+UndefinedError: 'app.models.User object' has no attribute 'lsast_seen'
+2018-05-15 13:45:25,582 INFO: Microblog startup [in /home/suhrda01/microblog/app/__init__.py:47]
+2018-05-18 08:44:57,226 INFO: Microblog startup [in /home/suhrda01/microblog/app/__init__.py:47]
